@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Goran S. Milovanović",
+    "linkedin": "https://www.linkedin.com/in/gmilovanovic/",
+    "title": "Chief AI Officer at smartocto",
+    "photo": "/images/organizers/goran-milovanovic.jpeg"
+  },
+  {
+    "name": "Ilija Lazarevic",
+    "linkedin": "https://www.linkedin.com/in/ilijalazarevic/",
+    "title": "CEO at DataBrut",
+    "photo": "/images/organizers/ilija-lazarevic.jpeg"
+  },
+  {
+    "name": "Arsenii Shkunkov",
+    "linkedin": "https://www.linkedin.com/in/arsenii-shkunkov/",
+    "title": "ML Engineer at Raw Ventures",
+    "photo": "/images/organizers/arsenii-shkunkov.jpeg"
+  },
+  {
+    "name": "Branko Kovač",
+    "linkedin": "https://www.linkedin.com/in/kovacbranko/",
+    "title": "Head of Data & AI",
+    "photo": "/images/organizers/branko-kovac.jpeg"
+  },
+  {
+    "name": "Mikhail Rozhkov",
+    "linkedin": "https://www.linkedin.com/in/mnrozhkov/",
+    "title": "Solutions Engineer at Iterative.ai",
+    "photo": "/images/organizers/mikhail-rozhkov.jpeg"
+  },
+  {
+    "name": "Nemanja Čukarić",
+    "linkedin": "https://www.linkedin.com/in/nemanja-cukaric/",
+    "title": "Senior ML Engineer",
+    "photo": "/images/organizers/nemanja-cukaric.jpeg"
+  }
+]

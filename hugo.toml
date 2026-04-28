@@ -1,0 +1,22 @@
+baseURL = 'https://masinerija-org.github.io/'
+languageCode = 'en-us'
+title = 'MACHINERY - Data Science Community'
+theme = 'machinery'
+
+# Set this to your repo name if deploying to https://USERNAME.github.io/REPO_NAME/
+# Leave empty for user/organization site (e.g. https://masinerija-org.github.io/)
+# Example: relativeURLs = true and uncomment the line below if using a project page
+# baseURL = 'https://masinerija-org.github.io/REPO_NAME/'
+
+[params]
+  description = 'MAŠINERIJA (MACHINERY, МАШИНЕРИЈА) is an organisation of professionals in Data Science, Analytics, and Engineering, ML, AI, and MLOps, in Serbia.'
+
+[menu]
+  [[menu.main]]
+    name = 'About'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = 'Meetups'
+    url = '/meetups/'
+    weight = 2

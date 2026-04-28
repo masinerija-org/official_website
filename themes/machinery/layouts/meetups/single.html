@@ -1,0 +1,101 @@
+{{ define "main" }}
+<style>
+    .event-detail {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .event-cover-full {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 40px;
+    }
+
+    .event-detail h1 {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 1.3;
+        margin-bottom: 24px;
+        letter-spacing: -0.01em;
+    }
+
+    .event-detail-meta {
+        display: flex;
+        gap: 24px;
+        font-size: 15px;
+        color: var(--text-secondary);
+        margin-bottom: 40px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .event-detail-description {
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--text-primary);
+    }
+
+    .event-detail-description p {
+        margin-bottom: 16px;
+    }
+
+    .event-detail-description strong {
+        font-weight: 600;
+    }
+
+    .event-detail-description a {
+        color: var(--text-primary);
+        text-decoration: underline;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-bottom: 32px;
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-size: 15px;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover {
+        color: var(--text-primary);
+    }
+
+    @media (max-width: 768px) {
+        .event-cover-full {
+            height: 250px;
+        }
+
+        .event-detail h1 {
+            font-size: 32px;
+        }
+
+        .event-detail-meta {
+            flex-direction: column;
+            gap: 8px;
+        }
+    }
+</style>
+
+<div class="event-detail">
+    <a href="/meetups/" class="back-link">← Back to Meetups</a>
+    
+    {{ if .Params.cover_image }}
+    <img src="{{ .Params.cover_image | relURL }}" alt="{{ .Title }}" class="event-cover-full">
+    {{ end }}
+    
+    <h1>{{ .Title }}</h1>
+    
+    <div class="event-detail-meta">
+        <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+        <span>{{ .Params.venue_name }}, {{ .Params.venue_city }}</span>
+        <span>{{ .Params.going_count }} attendees</span>
+    </div>
+    
+    <div class="event-detail-description">
+        {{ .Content }}
+    </div>
+</div>
+{{ end }}

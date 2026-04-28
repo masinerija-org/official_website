@@ -1,0 +1,154 @@
+{{ define "main" }}
+<style>
+    .intro {
+        max-width: 800px;
+        margin-bottom: 80px;
+    }
+
+    .intro h1 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 24px;
+        letter-spacing: -0.01em;
+    }
+
+    .intro p {
+        font-size: 18px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 16px;
+    }
+
+    .intro h2 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 40px;
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+        color: var(--text-primary);
+    }
+
+    .intro ul {
+        font-size: 18px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 16px;
+        padding-left: 24px;
+    }
+
+    .intro ul li {
+        margin-bottom: 8px;
+    }
+
+    .organizers-section h2 {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 48px;
+        letter-spacing: -0.01em;
+    }
+
+    .organizers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 32px;
+    }
+
+    .organizer-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        transition: all 0.2s;
+        text-decoration: none;
+        color: var(--text-primary);
+    }
+
+    .organizer-card:hover {
+        border-color: var(--text-primary);
+        background: var(--hover-bg);
+    }
+
+    .organizer-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: var(--bg-alt);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: 600;
+        color: #666;
+        overflow: hidden;
+    }
+
+    .organizer-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .organizer-name {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+
+    .organizer-linkedin {
+        font-size: 13px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .organizer-linkedin:hover {
+        color: var(--text-primary);
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .intro h1 {
+            font-size: 28px;
+        }
+
+        .intro p {
+            font-size: 16px;
+        }
+
+        .organizers-grid {
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+        }
+    }
+</style>
+
+<div class="intro">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+</div>
+
+<div class="organizers-section">
+    <h2>Organizers</h2>
+    <div class="organizers-grid">
+        {{ range .Site.Data.organizers }}
+        <div class="organizer-card">
+            <div class="organizer-photo">
+                {{ if .photo }}
+                <img src="{{ .photo }}" alt="{{ .name }}">
+                {{ else }}
+                {{ $names := split .name " " }}
+                {{ range $names }}{{ substr . 0 1 }}{{ end }}
+                {{ end }}
+            </div>
+            <div class="organizer-name">{{ .name }}</div>
+            <a href="{{ .linkedin }}" class="organizer-linkedin" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
