@@ -83,7 +83,7 @@
     <a href="{{ "meetups/" | relURL }}" class="back-link">← Back to Meetups</a>
     
     {{ if .Params.cover_image }}
-    <img src="{{ .Params.cover_image | relURL }}" alt="{{ .Title }}" class="event-cover-full">
+    <img src="{{ .Params.cover_image | strings.TrimPrefix "/" | relURL }}" alt="{{ .Title }}" class="event-cover-full">
     {{ end }}
     
     <h1>{{ .Title }}</h1>

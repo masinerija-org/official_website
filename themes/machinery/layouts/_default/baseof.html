@@ -158,7 +158,7 @@
                 <nav>
                     <ul>
                         {{ range .Site.Menus.main }}
-                        <li><a href="{{ .URL | relLangURL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>{{ .Name }}</a></li>
+                        <li><a href="{{ .URL | strings.TrimPrefix "/" | relLangURL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>{{ .Name }}</a></li>
                         {{ end }}
                     </ul>
                 </nav>

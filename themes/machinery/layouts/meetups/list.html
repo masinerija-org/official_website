@@ -136,7 +136,7 @@
             <p class="event-excerpt">{{ .Plain | truncate 150 }}</p>
         </div>
         {{ if .Params.cover_image }}
-        <img src="{{ .Params.cover_image | relURL }}" alt="{{ .Title }}" class="event-cover">
+        <img src="{{ .Params.cover_image | strings.TrimPrefix "/" | relURL }}" alt="{{ .Title }}" class="event-cover">
         {{ end }}
     </a>
     {{ end }}
