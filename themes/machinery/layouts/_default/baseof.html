@@ -151,14 +151,14 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="{{ "" | relLangURL }}">
+            <a href="{{ "" | absURL }}">
                 <img src="{{ "uploads/LogoMachineryEngleski.svg" | relURL }}" alt="MACHINERY" class="logo">
             </a>
             <div style="display: flex; align-items: center; gap: 32px;">
                 <nav>
                     <ul>
                         {{ range .Site.Menus.main }}
-                        <li><a href="{{ .URL | strings.TrimPrefix "/" | relLangURL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>{{ .Name }}</a></li>
+                        <li><a href="{{ .URL | strings.TrimPrefix "/" | absURL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>{{ .Name }}</a></li>
                         {{ end }}
                     </ul>
                 </nav>
