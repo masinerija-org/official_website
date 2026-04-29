@@ -139,7 +139,7 @@
         <div class="organizer-card">
             <div class="organizer-photo">
                 {{ if .photo }}
-                <img src="{{ .photo }}" alt="{{ .name }}">
+                <img src="{{ .photo | relURL }}" alt="{{ .name }}">
                 {{ else }}
                 {{ $names := split .name " " }}
                 {{ range $names }}{{ substr . 0 1 }}{{ end }}

@@ -80,7 +80,7 @@
 </style>
 
 <div class="event-detail">
-    <a href="/meetups/" class="back-link">← Back to Meetups</a>
+    <a href="{{ "meetups/" | relURL }}" class="back-link">← Back to Meetups</a>
     
     {{ if .Params.cover_image }}
     <img src="{{ .Params.cover_image | relURL }}" alt="{{ .Title }}" class="event-cover-full">
