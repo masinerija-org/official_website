@@ -96,6 +96,12 @@
     .organizer-name {
         font-size: 16px;
         font-weight: 500;
+        margin-bottom: 4px;
+    }
+
+    .organizer-title {
+        font-size: 13px;
+        color: var(--text-secondary);
         margin-bottom: 12px;
     }
 
@@ -146,6 +152,7 @@
                 {{ end }}
             </div>
             <div class="organizer-name">{{ .name }}</div>
+            {{ with .title }}<div class="organizer-title">{{ . }}</div>{{ end }}
             <a href="{{ .linkedin }}" class="organizer-linkedin" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
         </div>
         {{ end }}
